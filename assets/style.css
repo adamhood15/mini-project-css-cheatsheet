@@ -1,17 +1,26 @@
 :root {
     --background-color: rgb(63, 59, 63);
-    --purple-font: rgb(214, 75, 214);
+    --purple-font: rgb(177, 101, 177);
+    --dark-purple: rgb(126, 77, 126);
     --light-grey-font: rgb(214, 214, 214);
+    --white: #e2dede;
     --border-radius: 8px;
 }
 
 * {
     box-sizing: border-box;
-    font-family: monospace;
 }
 
 body {
     background-color: var(--background-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    line-height: 1.5;
+}
+
+main {
+    width: 96%;
+    margin: 20px auto;
 }
 
 header {
@@ -30,6 +39,8 @@ header {
 section {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
     justify-content:space-evenly;
     margin: 50px 0px 50px 0px;
 }
@@ -37,33 +48,51 @@ section {
     .card-column {
         display: flex;
         flex-direction: column;
-        border: dotted var(--light-grey-font) 2px;
+        align-items: center;
+        border: dashed var(--light-grey-font) 2px;
         width: 500px;
-        margin-bottom: 50px;
+        padding-bottom: 15px;
+        margin: 10px -12px 25px 0px;
     }
 
+    .code-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        min-height: 100%;
+    }
+
+    .code-card .code-block {
+        flex-grow: 1;
+    }
 
         .card-column h2 {
             border: solid var(--light-grey-font) 1px;
             border-radius: var(--border-radius);
             color: var(--purple-font);
             margin-top: -2rem;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             padding: 10px;
             background-color: var(--background-color);
         }
 
         .card-column p {
+            flex: 1 0 100%;
             color: var(--purple-font);
+            margin-top: -30px;
         }
 
         .code-block {
-            background-color: var(--purple-font);
+            background: linear-gradient(var(--dark-purple), var(--purple-font));
             width: 450px;
             border-radius: var(--border-radius);
+            color: var(--white);
+            padding: 0.5rem;
+            font-family: monospace;
         }
 
 footer {
     text-align: center;
     color: var(--purple-font);
+    margin: 15px;
 }
